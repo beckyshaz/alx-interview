@@ -20,7 +20,7 @@ def validUTF8(data):
                     or data[i + 2] & 0x80 != 0x00):
                 return False
             i += 3
-        elif data[i] & 0x8 == 0xF0:
+        elif data[i] & 0xF8 == 0xF0:
             if (i + 1 >= len(data) or data[i + 1] & 0x80 != 0x00
                     or data[i + 2] & 0x80 != 0x00
                     or data[i + 3] & 0x80 != 0x00):
