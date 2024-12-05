@@ -14,18 +14,18 @@ grids = [
 def island_perimeter(grid):
     """finding the perimeter of an ares soroounded by water"""
     perimeter = 0
-    rowSize = len(grids)
-    colSize = len(grids[0])
+    rowSize = len(grid)
+    colSize = len(grid[0])
 
     for rows in range(rowSize):
         for cols in range(colSize):
-            if grids[rows][cols] == 1:
-                if cols - 1 < 0 or grids[rows][cols - 1] == 0:
+            if grid[rows][cols] == 1:
+                if cols - 1 < 0 or grid[rows][cols - 1] == 0:
                     perimeter += 1
-                if cols + 1 == colSize or grids[rows][cols + 1] == 0:
+                if cols + 1 == colSize or grid[rows][cols + 1] == 0:
                     perimeter += 1
-                if rows - 1 < 0 or grids[rows - 1][cols] == 0:
+                if rows - 1 < 0 or grid[rows - 1][cols] == 0:
                     perimeter += 1
-                if rows + 1 == rowSize or grids[rows + 1][cols] == 0:
+                if rows + 1 == rowSize or grid[rows + 1][cols] == 0:
                     perimeter += 1
     return perimeter
